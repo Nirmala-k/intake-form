@@ -213,12 +213,12 @@ app.get('/api/patients/:id', (req, res) => {
 });
 
 // Serve frontend build
-app.use(express.static(path.join(__dirname, '../dist')));
+app.use(express.static(path.join(__dirname, '../../dist')));
 
 // Fallback to index.html for React Router
 app.use((req, res, next) => {
   if (req.method === 'GET' && !req.path.startsWith('/api')) {
-    res.sendFile(path.join(__dirname, '../dist', 'index.html'));
+    res.sendFile(path.join(__dirname, '../../dist', 'index.html'));
   } else {
     next();
   }
@@ -226,6 +226,7 @@ app.use((req, res, next) => {
 
 
 app.listen(5000, () => console.log('🚀 Server running on port 5000'));
+
 
 
 
