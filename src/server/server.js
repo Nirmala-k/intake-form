@@ -17,11 +17,10 @@ app.use(cors());
 
 
 const db = mysql.createConnection({
-  host: "interchange.proxy.rlwy.net",
-  user: "root",
-  password: "GjCcvrpAqtnTWLUDbxUvdWGaSgxdzCvu",
-  database: "railway",
-  port: 14051
+  uri: "mysql://root:GjCcvrpAqtnTWLUDbxUvdWGaSgxdzCvu@interchange.proxy.rlwy.net:14051/railway", // Set this in Render env vars
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 db.connect(err => {
@@ -226,6 +225,7 @@ app.use((req, res, next) => {
 
 
 app.listen(5000, () => console.log('🚀 Server running on port 5000'));
+
 
 
 
