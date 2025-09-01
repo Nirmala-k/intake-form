@@ -724,7 +724,7 @@ const PatientIntakeForm: React.FC = () => {
     setSubmitStatus('idle');
 
     try {
-      const response = await fetch('http://localhost:5000/api/patients', {
+      const response = await fetch('https://intake-form-5rrb.onrender.com/api/patients', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
