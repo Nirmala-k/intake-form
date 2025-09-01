@@ -6,11 +6,10 @@
   "scripts": {
   "dev": "vite",
   "dev:full": "concurrently \"npm run server\" \"npm run dev\"",
-  "server": "node server/server.js",
+  "server": "node src/server/server.js",
   "build": "vite build",
-  "start": "node server/server.js"
-}
-
+  "start": "node src/server/server.js"
+},
   "dependencies": {
     "@supabase/supabase-js": "^2.55.0",
     "axios": "^1.11.0",
