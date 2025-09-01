@@ -4,14 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "dev:full": "concurrently \"npm run server\" \"npm run dev\"",
-    "server": "node server/server.js",
-    "build": "npx vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-     "start": "node src/server/server.js"
-  },
+  "dev": "vite",
+  "dev:full": "concurrently \"npm run server\" \"npm run dev\"",
+  "server": "node server/server.js",
+  "build": "vite build",
+  "start": "node server/server.js"
+}
+
   "dependencies": {
     "@supabase/supabase-js": "^2.55.0",
     "axios": "^1.11.0",
