@@ -14,7 +14,6 @@ const __dirname = dirname(__filename);
 
 // Middleware
 app.use(cors());
-app.use(express.json());
 
 
 const db = mysql.createConnection({
@@ -217,10 +216,16 @@ app.get('/api/patients/:id', (req, res) => {
 app.use(express.static(path.join(__dirname, '../dist')));
 
 // Fallback to index.html for React Router
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../dist', 'index.html'));
+app.use((req, res, next) => {
+  if (req.method === 'GET' && !req.path.startsWith('/api')) {
+    res.sendFile(path.join(__dirname, '../dist', 'index.html'));
+  } else {
+    next();
+  }
 });
 
+
 app.listen(5000, () => console.log('🚀 Server running on port 5000'));
+
 
 
