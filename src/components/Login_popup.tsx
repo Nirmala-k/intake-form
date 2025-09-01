@@ -14,7 +14,7 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ setAuth }) => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/login", { username, password });
+      const res = await axios.post("https://intake-form-5rrb.onrender.com/api/login", { username, password });
       if (res.data.success) {
         localStorage.setItem("auth", "true"); 
         setAuth(true);
@@ -56,5 +56,6 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ setAuth }) => {
     </div>
   );
 };
+
 
 export default LoginPopup;
